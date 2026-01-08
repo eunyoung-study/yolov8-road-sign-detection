@@ -161,6 +161,23 @@ results = model.predict(source="/content/road_sign_datasets/images/test")
 
 ## 📊 Results
 
+### 🖼️ Detection Result Examples
+
+> 실제 테스트 이미지에 대해 YOLOv8 모델을 적용한 탐지 결과입니다.
+> 또 다른 결과 이미지는 result 폴더에 업로드하였습니다.
+
+![Traffic Sign Detection Result](result/road701.jpg)
+![Traffic Sign Detection Result](result/road702.jpg)
+
+* **신호등 (trafficlight)** : 이미지 상단 영역에서 정상적으로 탐지됨
+* **정지 표지판 (stop)** : 형태가 비교적 작은 경우에도 정확히 인식됨
+* **속도 제한 표지판 (speedlimit)** : 숫자 정보가 포함된 표지판도 안정적으로 탐지
+* **횡단보도 표지판 (crosswalk)** : 배경과 유사한 경우에도 Bounding Box가 잘 형성됨
+
+📌 *탐지 결과 이미지는 `runs/detect/` 경로에 저장되며, Bounding Box와 클래스명이 함께 시각화됨*
+
+---
+
 * 정상적인 **Bounding Box 출력** 확인
 * 데이터 전처리 품질이 **모델 성능에 직접적인 영향**을 미침
 * 라벨 오류 하나가 전체 학습을 실패시킬 수 있음을 경험
